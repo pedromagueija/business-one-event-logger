@@ -13,8 +13,6 @@ namespace EventLogger
     using System.IO;
     using System.Windows.Forms;
 
-    using B1DEUtils;
-
     using SAPbouiCOM;
 
     using Application = SAPbouiCOM.Application;
@@ -251,11 +249,6 @@ namespace EventLogger
         private ToolBarButton toolBarButton4;
 
         /// <summary>
-        /// The about_tool bar button.
-        /// </summary>
-        private ToolBarButton about_toolBarButton;
-
-        /// <summary>
         /// The tool bar button 5.
         /// </summary>
         private ToolBarButton toolBarButton5;
@@ -337,7 +330,6 @@ namespace EventLogger
             this.clearLog_toolBarButton = new ToolBarButton();
             this.toolBarButton3 = new ToolBarButton();
             this.toolBarButton4 = new ToolBarButton();
-            this.about_toolBarButton = new ToolBarButton();
             this.toolBarButton5 = new ToolBarButton();
             this.toolBarButton6 = new ToolBarButton();
             this.exit_toolBarButton = new ToolBarButton();
@@ -356,7 +348,7 @@ namespace EventLogger
             this.dataGrid.TabIndex = 0;
 
             // toolBar1
-            this.toolBar1.Buttons.AddRange(new[] { this.connect_toolBarButton, this.disconnect_toolBarButton, this.toolBarButton1, this.toolBarButton2, this.filter_toolBarButton, this.clearLog_toolBarButton, this.toolBarButton3, this.toolBarButton4, this.about_toolBarButton, this.toolBarButton5, this.toolBarButton6, this.exit_toolBarButton });
+            this.toolBar1.Buttons.AddRange(new[] { this.connect_toolBarButton, this.disconnect_toolBarButton, this.toolBarButton1, this.toolBarButton2, this.filter_toolBarButton, this.clearLog_toolBarButton, this.toolBarButton3, this.toolBarButton4, this.toolBarButton5, this.toolBarButton6, this.exit_toolBarButton });
             this.toolBar1.DropDownArrows = true;
             this.toolBar1.ImageList = this.imageList1;
             this.toolBar1.Location = new Point(0, 0);
@@ -401,11 +393,6 @@ namespace EventLogger
             // toolBarButton4
             this.toolBarButton4.Name = "toolBarButton4";
             this.toolBarButton4.Style = ToolBarButtonStyle.Separator;
-
-            // about_toolBarButton
-            this.about_toolBarButton.ImageIndex = 4;
-            this.about_toolBarButton.Name = "about_toolBarButton";
-            this.about_toolBarButton.ToolTipText = "About";
 
             // toolBarButton5
             this.toolBarButton5.Name = "toolBarButton5";
@@ -905,11 +892,6 @@ namespace EventLogger
             {
                 this.dataTable.Rows.Clear();
                 this.clearLog_toolBarButton.Enabled = false;
-            }
-            else if (but.ToolTipText == "About")
-            {
-                B1DEAbout about = new B1DEAbout("Event Logger");
-                about.ShowDialog();
             }
             else if (but.ToolTipText == "Exit")
             {
